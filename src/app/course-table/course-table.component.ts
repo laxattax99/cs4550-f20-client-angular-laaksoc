@@ -16,10 +16,6 @@ export class CourseTableComponent implements OnInit {
     private courseService: CourseService
   ) {}
 
-  // selectCourse = (course) => {
-  //   this.selectedCourseId = course._id;
-  // };
-
   ngOnInit(): void {
     this.activedRoute.params.subscribe((params) => {
       this.selectedCourseId = params.courseId;
