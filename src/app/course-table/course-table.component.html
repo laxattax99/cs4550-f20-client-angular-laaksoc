@@ -4,7 +4,7 @@
   </li>
   <li 
   *ngFor="let course of courses"
-      [ngClass]="{'list-group-item-success': course._id === selectedCourseId}"
+      [ngClass]="{'active': course._id === selectedCourseId}"
       class="list-group-item">
     <a routerLink="/courses/{{course._id}}/modules">
       {{course.title}}
