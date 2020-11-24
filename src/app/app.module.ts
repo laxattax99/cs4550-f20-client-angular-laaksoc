@@ -30,7 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     QuizzesComponent,
     QuizComponent,
     TrueFalseQuestionComponent,
-    MultipleChoiceQuestionComponent
+    MultipleChoiceQuestionComponent,
   ],
   imports: [
     BrowserModule,

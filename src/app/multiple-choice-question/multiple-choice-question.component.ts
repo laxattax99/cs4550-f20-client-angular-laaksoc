@@ -16,9 +16,20 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   @Input()
   question = {_id: '', title: '', question: '', choices: [], correct: '', answer: '' , type: ''}
   grading = false
+  showCorrect = false
+  showIncorrect = false
   faCheck = faCheck; faTimes = faTimes
 
-  grade = () => { this.grading = true; }
+  grade = () => { 
+    this.grading = true; 
+    if (this.question.answer === this.question.correct){
+      this.showIncorrect = false
+      this.showCorrect = true
+    }else{
+      this.showCorrect = false
+      this.showIncorrect = true
+    }
+  }
 
   radioChecked(choiceToCheck){
     this.question.choices.forEach(choice=>{
