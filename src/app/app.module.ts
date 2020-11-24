@@ -11,6 +11,13 @@ import { CourseService } from 'src/services/course-service';
 import { LessonService } from 'src/services/lesson-service';
 import { ModuleService } from 'src/services/module-service';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
+import { QuizzesService } from 'src/services/quiz.service.client';
+import { QuestionsService } from 'src/services/question.service.client';
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,13 +26,18 @@ import { CourseNavigatorComponent } from './course-navigator/course-navigator.co
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    CourseNavigatorComponent
+    CourseNavigatorComponent,
+    QuizzesComponent,
+    QuizComponent,
+    TrueFalseQuestionComponent,
+    MultipleChoiceQuestionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
-  providers: [CourseService, LessonService, ModuleService],
+  providers: [CourseService, LessonService, ModuleService, QuizzesService, QuestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
