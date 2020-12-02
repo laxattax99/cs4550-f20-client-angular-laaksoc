@@ -14,7 +14,14 @@ export class QuizzesComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.courseId = params.courseId;
-      this.service.findAllQuizzes().then((quizzes) => (this.quizzes = quizzes));
+      this.service.findAllQuizzes().then((quizzes) => {
+        this.quizzes = quizzes;
+        this.quizzes.forEach((quiz) => {
+          this.service
+            .findAttemptsForQuiz(quiz._id)
+            .then((attempts) => (quiz.attempts = attempts));
+        });
+      });
     });
   }
 }

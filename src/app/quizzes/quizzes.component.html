@@ -10,5 +10,13 @@
     >
       Start
     </a>
+    <div>
+      Previous Attempt Scores:
+      <ul class="list-group">
+        <li *ngFor="let attempt of quiz.attempts" class="list-group-item">
+          {{attempt.score}}
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>

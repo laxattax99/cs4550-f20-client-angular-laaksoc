@@ -9,4 +9,8 @@ export class QuizzesService {
     fetch(`http://localhost:3000/api/quizzes/${qid}`).then((response) =>
       response.json()
     );
+  findAttemptsForQuiz = (qid) =>
+    fetch(
+      `http://localhost:3000/api/quizzes/${qid}/attempts`
+    ).then((response) => response.json());
 }
